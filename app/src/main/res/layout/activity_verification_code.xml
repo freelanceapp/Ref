@@ -22,7 +22,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="50dp"
-            android:textColor="@color/color4"
+            android:textColor="@color/gray6"
             android:textSize="18sp"
             android:text="@string/code_verification"
             />
@@ -35,7 +35,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv1"
             android:layout_marginTop="10dp"
-            android:textColor="@color/color4"
+            android:textColor="@color/gray6"
             android:textSize="15sp"
             android:text="@string/enter_code_sent_to"
             />

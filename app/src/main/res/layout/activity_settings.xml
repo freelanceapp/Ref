@@ -70,7 +70,7 @@
                             android:padding="8dp"
                             android:rotation='@{lang.equals("ar")?180:0}'
                             android:src="@drawable/ic_next"
-                            android:tint="@color/color4"
+                            app:tint="@color/black"
 
 
                             />
@@ -161,7 +161,7 @@
                         android:padding="3dp"
                         android:rotation='@{lang.equals("ar")?180:0}'
                         android:src="@drawable/ic_right_arrow"
-                        android:tint="@color/gray5" />
+                        app:tint="@color/gray5" />
                 </LinearLayout>
 
                 <View
@@ -199,7 +199,7 @@
                         android:padding="3dp"
                         android:rotation='@{lang.equals("ar")?180:0}'
                         android:src="@drawable/ic_right_arrow"
-                        android:tint="@color/gray5" />
+                        app:tint="@color/gray5" />
 
                 </LinearLayout>
 
@@ -238,7 +238,7 @@
                         android:padding="3dp"
                         android:rotation='@{lang.equals("ar")?180:0}'
                         android:src="@drawable/ic_right_arrow"
-                        android:tint="@color/gray5" />
+                        app:tint="@color/gray5" />
                 </LinearLayout>
 
                 <View
@@ -278,7 +278,7 @@
                         android:padding="3dp"
                         android:rotation='@{lang.equals("ar")?180:0}'
                         android:src="@drawable/ic_right_arrow"
-                        android:tint="@color/gray5" />
+                        app:tint="@color/gray5" />
                 </LinearLayout>
 
                 <View
@@ -319,7 +319,7 @@
                         android:padding="3dp"
                         android:rotation='@{lang.equals("ar")?180:0}'
                         android:src="@drawable/ic_right_arrow"
-                        android:tint="@color/gray5" />
+                        app:tint="@color/gray5" />
                 </LinearLayout>
 
                 <View
@@ -360,7 +360,7 @@
                         android:padding="3dp"
                         android:rotation='@{lang.equals("ar")?180:0}'
                         android:src="@drawable/ic_right_arrow"
-                        android:tint="@color/gray5" />
+                        app:tint="@color/gray5" />
                 </LinearLayout>
 
                 <View
@@ -400,7 +400,7 @@
                         android:padding="3dp"
                         android:rotation='@{lang.equals("ar")?180:0}'
                         android:src="@drawable/ic_right_arrow"
-                        android:tint="@color/gray5" />
+                        app:tint="@color/gray5" />
                 </LinearLayout>
 
                 <View
@@ -462,7 +462,7 @@
                         android:padding="3dp"
                         android:rotation='@{lang.equals("ar")?180:0}'
                         android:src="@drawable/ic_right_arrow"
-                        android:tint="@color/gray5" />
+                        app:tint="@color/gray5" />
                 </LinearLayout>
 
                 <View
@@ -503,7 +503,7 @@
                         android:padding="3dp"
                         android:rotation='@{lang.equals("ar")?180:0}'
                         android:src="@drawable/ic_right_arrow"
-                        android:tint="@color/gray5" />
+                        app:tint="@color/gray5" />
                 </LinearLayout>
 
                 <View

@@ -46,7 +46,7 @@
                         android:layout_height="30dp"
                         android:src="@drawable/ic_close"
                         android:padding="8dp"
-                        android:tint="@color/color4"
+                        app:tint="@color/black"
                         android:layout_gravity="center"
 
 
@@ -99,7 +99,7 @@
                 android:layout_height="24dp"
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_coupon"
-                android:tint="@color/gray5"
+                app:tint="@color/gray5"
                 />
             <Space
                 android:layout_width="8dp"
@@ -132,7 +132,7 @@
             app:layout_constraintTop_toBottomOf="@id/ll"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias=".7"
-            android:textColor="@color/color4"
+            android:textColor="@color/black"
             android:textSize="12sp"
             android:linksClickable="true"
             android:textColorLink="@color/colorPrimary"

@@ -43,7 +43,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:src="@drawable/ic_delivery_truck2"
-                android:tint="@color/gray6" />
+                app:tint="@color/gray6" />
 
             <TextView
                 android:layout_width="wrap_content"

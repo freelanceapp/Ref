@@ -9,7 +9,6 @@
         android:layout_height="match_parent"
         tools:context=".activities_fragments.activity_splash.SplashActivity"
         >
-        <include layout="@layout/splash_layout"
-            />
+        <include layout="@layout/splash_layout" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

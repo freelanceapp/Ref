@@ -61,7 +61,7 @@
                             android:layout_height="30dp"
                             android:src="@drawable/ic_next"
                             android:padding="8dp"
-                            android:tint="@color/color4"
+                            app:tint="@color/black"
                             android:layout_gravity="center"
                             android:rotation='@{lang.equals("ar")?180:0}'
 
@@ -113,7 +113,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         android:textSize="14sp"
-                        android:textColor="@color/color4"
+                        android:textColor="@color/gray6"
                         android:text="English"
                         />
                     <ImageView
@@ -123,7 +123,7 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:tint="@color/colorPrimary"
+                        app:tint="@color/colorPrimary"
                         android:src="@drawable/ic_check"
                         android:padding="2dp"
                         android:visibility="gone"
@@ -150,7 +150,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         android:textSize="14sp"
-                        android:textColor="@color/color4"
+                        android:textColor="@color/gray6"
                         android:text="Arabic"
                         />
                     <ImageView
@@ -160,7 +160,7 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:tint="@color/colorPrimary"
+                        app:tint="@color/colorPrimary"
                         android:src="@drawable/ic_check"
                         android:padding="2dp"
                         android:visibility="gone"

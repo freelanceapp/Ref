@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
                 android:layout_marginEnd="60dp"
-                android:textColor="@color/color4"
+                android:textColor="@color/gray6"
                 android:layout_marginTop="10dp"
                 android:autoSizeTextType="uniform"
                 android:autoSizeMinTextSize="14sp"
@@ -110,6 +110,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     android:text="@string/next"
+                    android:layout_marginBottom="5dp"
                     />
 
                 <Button
@@ -122,6 +123,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="5dp"
                     android:text="@string/skip"
 
                     />

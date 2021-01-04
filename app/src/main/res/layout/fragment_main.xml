@@ -35,7 +35,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:src="@drawable/ic_search"
-                    android:tint="@color/color4"
+                    app:tint="@color/black"
                     />
                 <TextView
                     android:id="@+id/edtSearch"
@@ -48,7 +48,7 @@
                     android:background="@color/transparent"
                     android:textColorHint="@color/gray9"
                     android:textSize="14sp"
-                    android:textColor="@color/color4"
+                    android:textColor="@color/black"
                     android:hint="@string/i_want_restaurant"
                     android:gravity="center_vertical"
                     />
@@ -56,7 +56,7 @@
                     android:id="@+id/imageDelegateOrders"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:tint="@color/colorPrimary"
+                    app:tint="@color/colorPrimary"
                     android:src="@drawable/ic_car_wheel"
                     android:padding="5dp"
                     android:visibility='@{model==null?View.GONE:(model.user.user_type.equals("client")?View.GONE:View.VISIBLE),default=gone}'

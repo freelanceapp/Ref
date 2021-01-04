@@ -54,7 +54,7 @@
                             android:layout_height="40dp"
                             android:src="@drawable/ic_next"
                             android:padding="8dp"
-                            android:tint="@color/colorPrimary"
+                            app:tint="@color/black"
                             android:rotation='@{lang.equals("ar")?180:0}'
                             android:onClick="@{()->listener.back()}"
                             />
@@ -65,7 +65,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/black"
                         android:layout_gravity="center"
                         android:textSize="18sp"
                         android:text="@string/filter"
@@ -89,7 +89,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="20dp"
-                android:textColor="@color/color4"
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 android:text="@string/category"
                 />
@@ -110,7 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:textColor="@color/color4"
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 android:text="@string/distance"
                 />
@@ -128,7 +128,7 @@
                 app:isb_show_thumb_text="false"
                 app:isb_show_tick_texts="false"
                 app:isb_ticks_count="0"
-                app:isb_track_background_color="@color/color_primary_trans"
+                app:isb_track_background_color="@color/color_primary_trans2"
                 app:isb_track_progress_color="@color/colorPrimary"
                 app:isb_track_rounded_corners="true"
                 app:isb_track_background_size="10dp"
@@ -158,7 +158,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|start"
-                    android:textColor="@color/color4"
+                    android:textColor="@color/black"
                     android:textSize="14sp"
                     />
             </FrameLayout>
@@ -175,7 +175,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:textColor="@color/color4"
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 android:text="@string/rating"
                 />
@@ -193,7 +193,7 @@
                 app:isb_show_thumb_text="false"
                 app:isb_show_tick_texts="false"
                 app:isb_ticks_count="0"
-                app:isb_track_background_color="@color/color_primary_trans"
+                app:isb_track_background_color="@color/color_primary_trans2"
                 app:isb_track_progress_color="@color/colorPrimary"
                 app:isb_track_rounded_corners="true"
                 app:isb_track_background_size="10dp"
@@ -220,7 +220,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|start"
-                    android:textColor="@color/color4"
+                    android:textColor="@color/black"
                     android:textSize="14sp"
                     />
             </FrameLayout>

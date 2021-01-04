@@ -86,7 +86,7 @@
                                     android:padding="8dp"
                                     android:rotation='@{lang.equals("ar")?180:0}'
                                     android:src="@drawable/ic_next"
-                                    android:tint="@color/color4"
+                                    app:tint="@color/black"
 
 
                                     />
@@ -177,7 +177,7 @@
                                     android:layout_height="40dp"
                                     android:src="@drawable/ic_exclamation_mark"
                                     android:padding="10dp"
-                                    android:tint="@color/colorPrimary"
+                                    app:tint="@color/colorPrimary"
                                     android:layout_gravity="center"
                                     android:clickable="false"
                                     android:longClickable="false"
@@ -290,7 +290,7 @@
                                     android:layout_height="20dp"
                                     android:layout_gravity="center"
                                     android:src="@drawable/ic_phone"
-                                    android:tint="@color/white" />
+                                    app:tint="@color/white" />
                             </FrameLayout>
 
                             <FrameLayout
@@ -312,7 +312,7 @@
                                     android:layout_height="20dp"
                                     android:layout_gravity="center"
                                     android:src="@drawable/ic_map_pin"
-                                    android:tint="@color/white" />
+                                    app:tint="@color/white" />
                             </FrameLayout>
 
 
@@ -357,7 +357,7 @@
                                 android:layout_height="20dp"
                                 android:padding="3sp"
                                 android:src="@drawable/ic_reload"
-                                android:tint="@color/white" />
+                                app:tint="@color/white" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -483,7 +483,7 @@
                 android:longClickable="false"
                 android:padding="10dp"
                 android:src="@drawable/ic_mic"
-                android:tint="@color/white"
+                app:tint="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
 
@@ -498,7 +498,7 @@
                 android:background="@drawable/circle_bg"
                 android:padding="10dp"
                 android:src="@drawable/ic_camera"
-                android:tint="@color/white"
+                app:tint="@color/white"
                 app:layout_constraintBottom_toBottomOf="@id/imageRecord"
                 app:layout_constraintStart_toEndOf="@id/imageRecord"
                 app:layout_constraintTop_toTopOf="@id/imageRecord" />
@@ -513,7 +513,7 @@
                 android:padding="10dp"
                 android:rotation='@{lang.equals("ar")?180:0}'
                 android:src="@drawable/ic_send"
-                android:tint="@color/white"
+                app:tint="@color/white"
                 app:layout_constraintBottom_toBottomOf="@id/imageRecord"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/imageRecord"
@@ -574,7 +574,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_marginEnd="8dp"
                             android:src="@drawable/ic_more"
-                            android:tint="@color/gray6" />
+                            app:tint="@color/gray6" />
                     </LinearLayout>
 
                     <TextView
@@ -632,7 +632,7 @@
                                 android:background="@drawable/camera_bg"
                                 android:padding="10dp"
                                 android:src="@drawable/ic_camera"
-                                android:tint="@color/white"
+                                app:tint="@color/white"
 
                                 />
 
@@ -646,7 +646,7 @@
                                 android:background="@drawable/img_bg"
                                 android:padding="12dp"
                                 android:src="@drawable/ic_img_chooser"
-                                android:tint="@color/white"
+                                app:tint="@color/white"
 
                                 />
 
@@ -918,7 +918,7 @@
                                 android:layout_width="140dp"
                                 android:layout_height="140dp"
                                 android:src="@drawable/ic_error2"
-                                android:tint="@color/color_red" />
+                                app:tint="@color/color_red" />
 
                             <TextView
                                 android:layout_width="wrap_content"

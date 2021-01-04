@@ -62,7 +62,7 @@
                             android:padding="8dp"
                             android:rotation='@{lang.equals("ar")?180:0}'
                             android:src="@drawable/ic_next"
-                            android:tint="@color/color4"
+                            app:tint="@color/black"
 
 
                             />

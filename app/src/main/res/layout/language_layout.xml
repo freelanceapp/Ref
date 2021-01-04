@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".activities_fragments.activity_splash.SplashActivity"
-        android:background="@color/white"
+        android:background="@drawable/splash2"
         >
 
         <ImageView
@@ -18,6 +18,7 @@
             android:src="@drawable/language_bottom"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="gone"
 
             />
 
@@ -32,7 +33,9 @@
             app:layout_constraintVertical_bias=".06"
             android:src="@drawable/logo"
             android:transitionName="logo"
-            tools:ignore="UnusedAttribute" />
+            tools:ignore="UnusedAttribute"
+
+            />
 
         <LinearLayout
             android:id="@+id/llLang"
@@ -52,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:text="@string/choose_language"
                 android:textStyle="bold"
@@ -135,6 +138,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:alpha=".4"
             android:scaleType="fitXY"
+            android:visibility="gone"
             />
 
 
@@ -145,8 +149,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:src="@drawable/car_cut"
+            android:src="@drawable/car"
             android:transitionName="car"
-            tools:ignore="UnusedAttribute" />
+            tools:ignore="UnusedAttribute"
+            android:visibility="gone"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

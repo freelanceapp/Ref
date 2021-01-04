@@ -34,7 +34,7 @@
                     android:layout_height="45dp"
                     android:src="@drawable/ic_close"
                     android:padding="12dp"
-                    android:tint="@color/color4"
+                    app:tint="@color/black"
                     android:layout_gravity="start|top"
 
                     />
@@ -93,7 +93,7 @@
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:src="@drawable/ic_refresh"
-                            android:tint="@color/colorPrimary"
+                            app:tint="@color/colorPrimary"
                             android:clickable="false"
                             android:longClickable="false"
                             />
@@ -142,7 +142,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/white"
                         android:gravity="center_vertical"
-                        android:textColor="@color/color4"
+                        android:textColor="@color/black"
                         android:textSize="15sp"
                         android:text="@string/order2"
                         app:layout_constraintStart_toStartOf="parent"
@@ -157,7 +157,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         android:src="@drawable/ic_close"
-                        android:tint="@color/color4"
+                        app:tint="@color/black"
                         android:padding="5dp"
 
                         />
@@ -167,7 +167,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:textColor="@color/color4"
+                    android:textColor="@color/black"
                     android:textSize="15sp"
                     android:text="@string/order_details"
                     android:layout_marginTop="10dp"
@@ -192,7 +192,7 @@
                         android:layout_height="wrap_content"
                         android:minHeight="180dp"
                         android:padding="10dp"
-                        android:textColor="@color/color4"
+                        android:textColor="@color/black"
                         android:textSize="14sp"
                         android:inputType="textMultiLine"
                         android:textColorHint="@color/gray9"

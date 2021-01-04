@@ -63,7 +63,7 @@
                                 android:layout_marginEnd="10dp"
                                 android:padding="5dp"
                                 android:src="@drawable/ic_play"
-                                android:tint="@color/colorPrimary"
+                                app:tint="@color/colorPrimary"
                                 android:layout_gravity="center"
                                 android:background="@drawable/circle_white_stroke"
                                 android:visibility="invisible"

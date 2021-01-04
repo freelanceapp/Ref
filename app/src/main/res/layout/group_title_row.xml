@@ -43,7 +43,7 @@
                 android:layout_height="25dp"
                 android:src="@drawable/ic_up_arrow2"
                 android:padding="5dp"
-                android:tint="@color/gray4"
+                app:tint="@color/gray4"
                 />
         </LinearLayout>
         <net.cachapa.expandablelayout.ExpandableLayout

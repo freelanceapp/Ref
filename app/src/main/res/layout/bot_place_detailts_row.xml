@@ -111,7 +111,7 @@
                                 android:layout_width="10dp"
                                 android:layout_height="10dp"
                                 android:src="@drawable/ic_star"
-                                android:tint="@color/rate_color"
+                                app:tint="@color/white"
                                 android:layout_gravity="center_vertical"
                                 />
                             <TextView

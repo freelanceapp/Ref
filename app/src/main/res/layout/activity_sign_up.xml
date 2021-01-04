@@ -74,7 +74,7 @@
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
                     android:hint="@string/name"
-                    android:textColorHint="@color/color4"
+                    android:textColorHint="@color/gray6"
                     android:textSize="15sp"
                     android:textColor="@color/black"
                     android:text="@={model.name}"
@@ -94,7 +94,7 @@
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
                     android:hint="@string/email"
-                    android:textColorHint="@color/color4"
+                    android:textColorHint="@color/gray6"
                     android:textSize="15sp"
                     android:textColor="@color/black"
                     android:inputType="textEmailAddress"
@@ -115,7 +115,7 @@
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
                     android:hint="@string/year_of_birth"
-                    android:textColorHint="@color/color4"
+                    android:textColorHint="@color/gray6"
                     android:textSize="15sp"
                     android:textColor="@color/black"
                     android:gravity="center_vertical"
@@ -155,7 +155,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="5dp"
                                 android:layout_marginEnd="5dp"
-                                android:textColor="@color/color4"
+                                android:textColor="@color/gray6"
                                 android:textSize="15sp"
                                 android:text="@string/male"
                                 />
@@ -190,7 +190,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="5dp"
                                 android:layout_marginEnd="5dp"
-                                android:textColor="@color/color4"
+                                android:textColor="@color/gray6"
                                 android:textSize="15sp"
                                 android:text="@string/female"
                                 />
@@ -282,7 +282,7 @@
                             android:layout_height="40dp"
                             android:padding="12dp"
                             android:src="@drawable/ic_gallery"
-                            android:tint="@color/color1" />
+                            app:tint="@color/color1" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -317,7 +317,7 @@
                             android:layout_height="40dp"
                             android:padding="12dp"
                             android:src="@drawable/ic_camera"
-                            android:tint="@color/colorPrimary" />
+                            app:tint="@color/colorPrimary" />
 
                         <TextView
                             android:layout_width="wrap_content"

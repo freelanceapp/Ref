@@ -217,7 +217,7 @@
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:src="@drawable/ic_right_arrow"
-                            android:tint="@color/white"
+                            app:tint="@color/white"
                             android:padding="2dp"
                             android:rotation='@{lang.equals("ar")?180:0}'
                             />
@@ -256,7 +256,7 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:src="@drawable/ic_clock"
-                        android:tint="@color/color_red"
+                        app:tint="@color/color_red"
                         android:padding="3dp"
                         />
                     <TextView
@@ -273,7 +273,7 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:src="@drawable/ic_account_balance"
-                        android:tint="@color/gray4"
+                        app:tint="@color/gray4"
                         android:padding="3dp"
                         />
                     <TextView
@@ -337,7 +337,7 @@
                        android:layout_width="20dp"
                        android:layout_height="20dp"
                        android:src="@drawable/ic_right_arrow"
-                       android:tint="@color/gray6"
+                       app:tint="@color/gray6"
                        android:padding="3dp"
                        android:rotation='@{lang.equals("ar")?180:0}'
                        />

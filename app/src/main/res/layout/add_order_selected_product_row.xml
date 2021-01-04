@@ -60,7 +60,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:src="@drawable/ic_arrow_down2"
-                android:tint="@color/gray4"
+                app:tint="@color/gray4"
                 android:visibility="@{model.selectedAdditions.size()>0?View.VISIBLE:View.INVISIBLE,default=gone}"
                 />
             <TextView

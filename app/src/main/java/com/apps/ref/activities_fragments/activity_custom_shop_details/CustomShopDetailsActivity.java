@@ -69,7 +69,7 @@ public class CustomShopDetailsActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         Paper.init(newBase);
-        super.attachBaseContext(Language.updateResources(newBase, Paper.book().read("lang", "ar")));
+        super.attachBaseContext(Language.onAttach(newBase, Paper.book().read("lang", "ar")));
     }
 
     @Override

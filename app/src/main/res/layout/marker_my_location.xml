@@ -35,7 +35,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:src="@drawable/ic_home2"
-            android:tint="@color/colorPrimary"
+            app:tint="@color/colorPrimary"
             />
     </LinearLayout>
 

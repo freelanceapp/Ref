@@ -53,7 +53,7 @@
                         android:layout_height="40dp"
                         android:src="@drawable/ic_next"
                         android:padding="8dp"
-                        android:tint="@color/colorPrimary"
+                        app:tint="@color/colorPrimary"
                         android:rotation='@{lang.equals("ar")?180:0}'
                         android:layout_gravity="center"
                         android:clickable="false"
@@ -84,7 +84,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:src="@drawable/ic_search"
-                    android:tint="@color/color4"
+                    app:tint="@color/black"
                     />
                 <EditText
                     android:id="@+id/edtSearch"
@@ -97,7 +97,7 @@
                     android:background="@color/transparent"
                     android:textColorHint="@color/gray9"
                     android:textSize="14sp"
-                    android:textColor="@color/color4"
+                    android:textColor="@color/black"
                     android:hint="@string/i_want_restaurant"
                     android:imeOptions="actionSearch"
                     />
@@ -128,7 +128,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:src="@drawable/ic_marker"
-                    android:tint="@color/color4"
+                    app:tint="@color/black"
                     android:padding="3dp"
                     />
                 <TextView
@@ -141,7 +141,7 @@
                     android:background="@color/transparent"
                     android:textColorHint="@color/gray9"
                     android:textSize="14sp"
-                    android:textColor="@color/color4"
+                    android:textColor="@color/black"
                     android:hint="@string/your_location_near_you"
                     />
 
@@ -164,7 +164,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:textColor="@color/color4"
+                android:textColor="@color/black"
                 android:textSize="13sp"
                 android:text='@{count+" "+@string/results_for+"\""+query+"\""}'
                 app:layout_constraintEnd_toStartOf="@id/tvFilter"
@@ -178,7 +178,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:src="@drawable/ic_filter"
-                android:tint="@color/color4"
+                app:tint="@color/black"
                 />
             <TextView
                 android:id="@+id/tvFilter"
@@ -187,7 +187,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/imageFilter"
-                android:textColor="@color/color4"
+                android:textColor="@color/black"
                 android:textSize="13sp"
                 android:text="@string/filter"
                 android:layout_marginStart="10dp"
@@ -209,7 +209,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textSize="14sp"
-                android:textColor="@color/color4"
+                android:textColor="@color/black"
                 android:text="@string/can_t_find_any_shop_or_service_try_different_criteria"
                 android:paddingLeft="50dp"
                 android:paddingRight="50dp"
@@ -243,7 +243,7 @@
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            android:textColor="@color/color4"
+                            android:textColor="@color/black"
                             android:textSize="12sp"
                             android:text="@string/recent_search"
                             />

@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textSize="14sp"
-                android:textColor="@color/color4"
+                android:textColor="@color/gray6"
                 android:text="@string/good_afternoon"
                 />
         </androidx.cardview.widget.CardView>

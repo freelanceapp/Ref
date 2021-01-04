@@ -58,7 +58,7 @@
                             android:padding="8dp"
                             android:layout_gravity="center"
                             android:rotation='@{lang.equals("ar")?180:0}'
-                            app:tint="@color/color4"
+                            app:tint="@color/black"
 
                             />
                     </FrameLayout>

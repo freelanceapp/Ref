@@ -69,7 +69,7 @@
                                 android:layout_height="40dp"
                                 android:src="@drawable/ic_next"
                                 android:padding="8dp"
-                                android:tint="@color/colorPrimary"
+                                app:tint="@color/colorPrimary"
                                 android:rotation='@{lang.equals("ar")?180:0}'
                                 />
 
@@ -135,7 +135,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_marker"
-                    android:tint="@color/colorPrimary"
+                    app:tint="@color/colorPrimary"
                     />
                 <TextView
                     android:layout_width="wrap_content"

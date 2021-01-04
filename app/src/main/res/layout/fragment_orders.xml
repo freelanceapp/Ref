@@ -45,7 +45,7 @@
                             android:layout_height="40dp"
                             android:src="@drawable/ic_clock"
                             android:padding="10dp"
-                            android:tint="@color/colorPrimary"
+                            app:tint="@color/colorPrimary"
                             android:layout_gravity="center"
                             android:clickable="false"
                             android:longClickable="false"
@@ -106,7 +106,7 @@
                         android:layout_width="150dp"
                         android:layout_height="150dp"
                         android:src="@drawable/ic_delivery_truck2"
-                        android:tint="@color/gray6"
+                        app:tint="@color/gray6"
                         />
                     <TextView
                         android:layout_width="wrap_content"

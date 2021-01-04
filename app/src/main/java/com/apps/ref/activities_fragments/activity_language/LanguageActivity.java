@@ -36,7 +36,7 @@ public class LanguageActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         Paper.init(newBase);
-        super.attachBaseContext(Language.updateResources(newBase, Paper.book().read("lang", "ar")));
+        super.attachBaseContext(Language.onAttach(newBase, Paper.book().read("lang", "ar")));
     }
 
     @Override
@@ -118,7 +118,7 @@ public class LanguageActivity extends AppCompatActivity {
 
                 if (userModel==null){
                     Paper.book().write("lang",selectedLang);
-                    Language.updateResources(this,selectedLang);
+                    Language.setLocale(this,selectedLang);
                     setResult(RESULT_OK);
                     finish();
                 }else {
@@ -153,7 +153,7 @@ public class LanguageActivity extends AppCompatActivity {
                             preferences.create_update_userdata(LanguageActivity.this,userModel);
 
                             Paper.book().write("lang",selectedLang);
-                            Language.updateResources(LanguageActivity.this,selectedLang);
+                            Language.setLocale(LanguageActivity.this,selectedLang);
                             setResult(RESULT_OK);
                             finish();
 

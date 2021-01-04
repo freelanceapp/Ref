@@ -54,12 +54,13 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         Paper.init(newBase);
-        super.attachBaseContext(Language.updateResources(newBase,Paper.book().read("lang","ar")));
+        super.attachBaseContext(Language.onAttach(newBase,Paper.book().read("lang","ar")));
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         binding = DataBindingUtil.setContentView(this,R.layout.activity_splash);
         initView();
     }
@@ -136,14 +137,14 @@ public class SplashActivity extends AppCompatActivity {
             cardAr.setCardElevation(5f);
             cardEn.setCardElevation(0f);
             tvAr.setTextColor(ContextCompat.getColor(this,R.color.colorPrimary));
-            tvEn.setTextColor(ContextCompat.getColor(this,R.color.color2));
+            tvEn.setTextColor(ContextCompat.getColor(this,R.color.gray6));
             lang = "ar";
 
         });
         cardEn.setOnClickListener(v -> {
             cardAr.setCardElevation(0f);
             cardEn.setCardElevation(5f);
-            tvAr.setTextColor(ContextCompat.getColor(this,R.color.color2));
+            tvAr.setTextColor(ContextCompat.getColor(this,R.color.gray6));
             tvEn.setTextColor(ContextCompat.getColor(this,R.color.colorPrimary));
             lang = "en";
         });

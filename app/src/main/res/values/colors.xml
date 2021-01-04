@@ -4,9 +4,13 @@
     <color name="colorPrimaryDark">@color/color2</color>
     <color name="colorAccent">@color/color1</color>
 
-    <color name="color1">#243B98</color>
-    <color name="color2">#243B98</color>
+    <color name="color1">#ffcb04</color>
+    <color name="color2">#ffcb04</color>
+    <color name="color4">#202020</color>
 
+    <color name="color_primary_trans">#aaffcb04</color>
+
+    <color name="color_primary_trans2">#aaffcb04</color>
     <color name="white">#fff</color>
     <color name="black">#000000</color>
     <color name="gray0">#fafafa</color>

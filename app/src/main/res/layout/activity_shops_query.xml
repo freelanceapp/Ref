@@ -58,7 +58,7 @@
                             android:layout_height="30dp"
                             android:src="@drawable/ic_next"
                             android:padding="8dp"
-                            android:tint="@color/color4"
+                            app:tint="@color/black"
                             android:layout_gravity="center"
                             android:rotation='@{lang.equals("ar")?180:0}'
 
@@ -105,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textSize="14sp"
-                android:textColor="@color/color4"
+                android:textColor="@color/black"
                 android:text="@string/can_t_find_any_shop_or_service_try_different_criteria"
                 android:paddingLeft="50dp"
                 android:paddingRight="50dp"

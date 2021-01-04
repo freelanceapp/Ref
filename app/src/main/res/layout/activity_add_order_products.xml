@@ -78,7 +78,7 @@
                                 android:layout_height="30dp"
                                 android:src="@drawable/ic_next"
                                 android:padding="8dp"
-                                android:tint="@color/color4"
+                                app:tint="@color/black"
                                 android:layout_gravity="center"
                                 android:rotation='@{lang.equals("ar")?180:0}'
 
@@ -201,7 +201,7 @@
                             android:layout_height="40dp"
                             android:src="@drawable/ic_camera"
                             android:padding="8dp"
-                            android:tint="@color/gray6"
+                            app:tint="@color/gray6"
                             />
 
                     </LinearLayout>
@@ -255,7 +255,7 @@
                                         android:layout_width="20dp"
                                         android:layout_height="20dp"
                                         android:src="@drawable/ic_check"
-                                        android:tint="@color/colorPrimary"
+                                        app:tint="@color/colorPrimary"
 
                                         />
                                     <TextView
@@ -329,7 +329,7 @@
                             android:layout_height="20dp"
                             android:src="@drawable/ic_plus"
                             android:padding="3dp"
-                            android:tint="@color/colorPrimary"
+                            app:tint="@color/colorPrimary"
 
                             />
 

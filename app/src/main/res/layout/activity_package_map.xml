@@ -51,7 +51,7 @@
                         android:layout_height="40dp"
                         android:src="@drawable/ic_next"
                         android:padding="8dp"
-                        android:tint="@color/color4"
+                        app:tint="@color/gray6"
                         android:rotation='@{lang.equals("ar")?180:0}'
                         android:onClick="@{()->listener.back()}"
                         />
@@ -62,7 +62,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/color4"
+                    android:textColor="@color/gray6"
                     android:layout_gravity="center"
                     android:textSize="15sp"
                     android:text="@string/share_location"
@@ -108,7 +108,7 @@
                     android:layout_height="15dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_flag"
-                    android:tint="@color/white"
+                    app:tint="@color/white"
                     android:padding="3dp"
                     />
             </FrameLayout>
@@ -118,7 +118,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="@id/llFromLocation"
-                android:textColor="@color/color4"
+                android:textColor="@color/gray6"
                 android:textSize="13sp"
                 android:text="@string/pick_up"
                 />
@@ -153,7 +153,7 @@
                     android:layout_height="20dp"
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/ic_right_arrow"
-                    android:tint="@color/gray4"
+                    app:tint="@color/gray4"
                     android:rotation='@{lang.equals("ar")?180:0}'
                     />
 
@@ -183,7 +183,7 @@
                     android:layout_height="15dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_box"
-                    android:tint="@color/white"
+                    app:tint="@color/white"
                     android:padding="3dp"
                     />
             </FrameLayout>
@@ -193,7 +193,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/llFromLocation"
                 app:layout_constraintStart_toStartOf="@id/llToLocation"
-                android:textColor="@color/color4"
+                android:textColor="@color/gray6"
                 android:textSize="13sp"
                 android:text="@string/drop_off"
                 android:layout_marginTop="10dp"
@@ -234,7 +234,7 @@
                     android:layout_height="20dp"
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/ic_right_arrow"
-                    android:tint="@color/gray4"
+                    app:tint="@color/gray4"
                     android:rotation='@{lang.equals("ar")?180:0}'
 
                     />
@@ -296,7 +296,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_gravity="center_vertical"
-                        android:textColor="@color/color4"
+                        android:textColor="@color/gray6"
                         android:textSize="14sp"
                         android:text="@string/not_yet_chosen_location"
                         />
