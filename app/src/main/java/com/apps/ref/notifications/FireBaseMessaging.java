@@ -70,10 +70,9 @@ public class FireBaseMessaging extends FirebaseMessagingService {
             Log.e("not",notification_type+"__");
 
             if (notification_type.equals("chat")){
-                Log.e("1","1");
                 ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
                 String current_class = activityManager.getRunningTasks(1).get(0).topActivity.getClassName();
-                if (current_class.equals("com.apps.emdad.activities_fragments.activity_chat.ChatActivity")){
+                if (current_class.equals("com.apps.ref.activities_fragments.activity_chat.ChatActivity")){
                     if (from_user_id.equals(getChatUserId())){
 
                         String id = String.valueOf(map.get("id"));
@@ -172,7 +171,7 @@ public class FireBaseMessaging extends FirebaseMessagingService {
 
         String notification_type =map.get("noti_type");
         String order_id =map.get("order_id");
-
+        Log.e("order_id",order_id+"__");
         final NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
         String CHANNEL_ID = "my_channel_02";
         CharSequence CHANNEL_NAME = "my_channel_name";
@@ -194,13 +193,12 @@ public class FireBaseMessaging extends FirebaseMessagingService {
         builder.setContentTitle(title);
         builder.setContentText(body);
         builder.setStyle(new NotificationCompat.BigTextStyle().bigText(body));
-
-
+        Log.e("cccccccc",order_id+"_____");
 
 
         if (notification_type.equals("chat")){
             Intent intent = new Intent(this, ChatActivity.class);
-            intent.putExtra("order_id",order_id);
+            intent.putExtra("order_id",Integer.parseInt(order_id));
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             TaskStackBuilder taskStackBuilder = TaskStackBuilder.create(this);
             taskStackBuilder.addNextIntent(intent);
@@ -327,7 +325,7 @@ public class FireBaseMessaging extends FirebaseMessagingService {
 
         if (notification_type.equals("chat")){
             Intent intent = new Intent(this, ChatActivity.class);
-            intent.putExtra("order_id",order_id);
+            intent.putExtra("order_id",Integer.parseInt(order_id));
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             TaskStackBuilder taskStackBuilder = TaskStackBuilder.create(this);
             taskStackBuilder.addNextIntent(intent);

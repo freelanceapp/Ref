@@ -439,6 +439,7 @@ public class ChatActivity extends AppCompatActivity {
 
 
     private void getOrderById(ProgressDialog dialog) {
+        Log.e("dddd",order_id+"___"+userModel.getUser().getId());
         Api.getService(Tags.base_url).getSingleOrder(userModel.getUser().getToken(), order_id, userModel.getUser().getId())
                 .enqueue(new Callback<SingleOrderDataModel>() {
                     @Override
@@ -1460,7 +1461,11 @@ public class ChatActivity extends AppCompatActivity {
 
     }
     private void rateClear(){
-        Picasso.get().load(Tags.IMAGE_URL+orderModel.getClient().getLogo()).placeholder(R.drawable.user_avatar).into(binding.clientImage);
+        try {
+            Picasso.get().load(Tags.IMAGE_URL+orderModel.getClient().getLogo()).placeholder(R.drawable.user_avatar).into(binding.clientImage);
+        }catch (Exception e){
+
+        }
         binding.emoji1.setImageResource(R.drawable.sad1);
         binding.emoji2.setImageResource(R.drawable.sad1);
         binding.emoji3.setImageResource(R.drawable.sad3);
