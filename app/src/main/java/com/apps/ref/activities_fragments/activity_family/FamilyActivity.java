@@ -53,7 +53,7 @@ public class FamilyActivity extends AppCompatActivity {
     private FamilyModel familyModel;
     private List<SingleSubCategoryModel> familyCategoryList;
     private List<SingleProductModel> productModelList;
-    private List<ProductModel> selectedProductList;
+    private List<SingleProductModel> selectedProductList;
     private int parent_pos = -1;
     private double total = 0.0;
     private UserModel userModel;
@@ -264,43 +264,44 @@ public class FamilyActivity extends AppCompatActivity {
     }
 
     public void updateProduct(SingleProductModel model, int adapterPosition) {
-      
+        productModelList.set(adapterPosition,model);
+        familyAdapter.notifyItemChanged(adapterPosition);
     }
 
-//    public void addToCart(ProductModel model, int adapterPosition) {
-//        int itemPos = isItemInCart(model);
-//        if (itemPos == -1) {
-//            selectedProductList.add(model);
-//
-//        } else {
-//            selectedProductList.set(itemPos, model);
-//
-//        }
-//        total = calculateTotal();
-//        binding.tvTotal.setText(String.format(Locale.ENGLISH, "%s %s", total, getString(R.string.sar)));
-//        familyAdapter.notifyItemChanged(adapterPosition);
-//
-//    }
+    public void addToCart(SingleProductModel model, int adapterPosition) {
+        int itemPos = isItemInCart(model);
+        if (itemPos == -1) {
+            selectedProductList.add(model);
 
-//    private int isItemInCart(ProductModel productModel) {
-//        int pos = -1;
-//        for (int index = 0; index < selectedProductList.size(); index++) {
-//            ProductModel model = selectedProductList.get(index);
-//            if (model.getId() == productModel.getId()) {
-//                pos = index;
-//                return pos;
-//            }
-//        }
-//        return pos;
-//    }
-//
-//    private double calculateTotal() {
-//        double total = 0.0;
-//        for (ProductModel model : selectedProductList) {
-//            total += model.getPrice() * model.getCount();
-//        }
-//        return total;
-//    }
+        } else {
+            selectedProductList.set(itemPos, model);
+
+        }
+        total = calculateTotal();
+        binding.tvTotal.setText(String.format(Locale.ENGLISH, "%s %s", total, getString(R.string.sar)));
+        familyAdapter.notifyItemChanged(adapterPosition);
+
+    }
+
+    private int isItemInCart(SingleProductModel productModel) {
+        int pos = -1;
+        for (int index = 0; index < selectedProductList.size(); index++) {
+            SingleProductModel model = selectedProductList.get(index);
+            if (model.getId() == productModel.getId()) {
+                pos = index;
+                return pos;
+            }
+        }
+        return pos;
+    }
+
+    private double calculateTotal() {
+        double total = 0.0;
+        for (SingleProductModel model : selectedProductList) {
+            total += model.getPrice() * model.getCount();
+        }
+        return total;
+    }
 //
 //    @Override
 //    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

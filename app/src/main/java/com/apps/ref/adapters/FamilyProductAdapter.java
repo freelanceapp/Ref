@@ -84,10 +84,10 @@ public class FamilyProductAdapter extends RecyclerView.Adapter<FamilyProductAdap
         });
 
 
-//        holder.binding.imageAddToCard.setOnClickListener(view -> {
-//            ProductModel model = list.get(holder.getAdapterPosition());
-//            activity.addToCart(model,holder.getAdapterPosition());
-//        });
+        holder.binding.imageAddToCard.setOnClickListener(view -> {
+            SingleProductModel model = list.get(holder.getAdapterPosition());
+            activity.addToCart(model,holder.getAdapterPosition());
+        });
 
 
     }
