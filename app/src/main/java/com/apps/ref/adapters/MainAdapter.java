@@ -1,6 +1,7 @@
 package com.apps.ref.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.apps.ref.R;
 import com.apps.ref.activities_fragments.activity_home.HomeActivity;
 import com.apps.ref.activities_fragments.activity_home.fragments.Fragment_Main;
+import com.apps.ref.activities_fragments.activity_product_family.ProductFamilyActivity;
 import com.apps.ref.databinding.MainCategoryDataRowBinding;
 import com.apps.ref.databinding.MainSliderRowBinding;
 import com.apps.ref.models.CategoryDataModel;
@@ -139,7 +141,12 @@ public class MainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     }
                 }
             });
+            sliderHolder.binding.layout1.setOnClickListener(view -> {
 
+                Intent intent = new Intent(context, ProductFamilyActivity.class);
+                context.startActivity(intent);
+
+            });
 
 
             skeletonPopular = Skeleton.bind(sliderHolder.binding.recViewPopular)

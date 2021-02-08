@@ -360,7 +360,10 @@
     <string name="respectable">Respectable</string>
     <string name="professional">Professional</string>
     <string name="responsive">Responsive</string>
-
+    <string name="productive_families">Productive families</string>
+    <string name="no_data_to_show">No Data To Show</string>
+    <string name="no_image">No Image</string>
+    <string name="total">Total</string>
 
 
 </resources>

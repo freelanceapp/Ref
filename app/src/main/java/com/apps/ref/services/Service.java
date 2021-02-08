@@ -1,5 +1,8 @@
 package com.apps.ref.services;
 
+import com.apps.ref.models.AllFamilyModel;
+import com.apps.ref.models.AllCategoryModel;
+import com.apps.ref.models.AllProdutsModel;
 import com.apps.ref.models.BalanceModel;
 import com.apps.ref.models.CategoryDataModel;
 import com.apps.ref.models.CountryDataModel;
@@ -20,6 +23,7 @@ import com.apps.ref.models.PlaceMapDetailsData;
 import com.apps.ref.models.RangeOfferModel;
 import com.apps.ref.models.SettingModel;
 import com.apps.ref.models.ShopDepartmentDataModel;
+import com.apps.ref.models.SingleFamilyModel;
 import com.apps.ref.models.SingleMessageDataModel;
 import com.apps.ref.models.SingleOrderDataModel;
 import com.apps.ref.models.SliderModel;
@@ -570,4 +574,21 @@ public interface Service {
     Call<UserModel> deleteUserImage(@Header("Authorization") String user_token,
                                        @Field("user_id") int user_id
     );
+    @GET("api/get-basic-category")
+    Call<AllCategoryModel> getCategories(
+            @Query("pagination_status") String pagination_status,
+            @Query("per_link_") int per_link_,
+            @Query("page") int page);
+    @GET("api/get-familey-basic-category")
+    Call<AllFamilyModel> getFamilies(
+            @Query("pagination_status") String pagination_status,
+            @Query("per_link_") int per_link_,
+            @Query("page") int page,
+            @Query("id") int id
+            );
+    @GET("api/get-one-family")
+    Call<SingleFamilyModel> getFamilyCategory_Products(@Query("id") int id);
+    @GET("api/get-family-product")
+    Call<AllProdutsModel> getFamilyProducts(@Query("family_id") int family_id,
+                                            @Query("category_id") int category_id);
 }

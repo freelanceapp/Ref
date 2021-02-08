@@ -361,5 +361,9 @@
     <string name="respectable">محترم</string>
     <string name="professional">إحترافي</string>
     <string name="responsive">متجاوب</string>
+    <string name="productive_families">أسر منتجة</string>
+    <string name="no_data_to_show">No Data To Show</string>
+    <string name="no_image">No Image</string>
+    <string name="total">Total</string>
 
 </resources>
