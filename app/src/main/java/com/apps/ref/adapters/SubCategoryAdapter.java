@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.apps.ref.R;
-import com.apps.ref.activities_fragments.activity_family.FamilyActivity;
+import com.apps.ref.activities_fragments.family.activity_family.FamilyActivity;
 import com.apps.ref.databinding.ItemCategoryBinding;
 import com.apps.ref.models.SingleSubCategoryModel;
 

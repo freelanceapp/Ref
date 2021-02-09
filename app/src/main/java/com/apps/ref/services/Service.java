@@ -149,7 +149,7 @@ public interface Service {
     Call<SliderModel> getSlider();
 
     @GET("api/slider")
-    Call<SliderModel> getMarketSlider( @Query("type") String type);
+    Call<SliderModel> getMarketSlider(@Query("type") String type);
 
     @GET("api/get-profile")
     Call<UserModel> getUserById(@Header("Authorization") String user_token,
@@ -572,23 +572,72 @@ public interface Service {
     @FormUrlEncoded
     @POST("api/delete-user-logo")
     Call<UserModel> deleteUserImage(@Header("Authorization") String user_token,
-                                       @Field("user_id") int user_id
+                                    @Field("user_id") int user_id
     );
+
     @GET("api/get-basic-category")
     Call<AllCategoryModel> getCategories(
             @Query("pagination_status") String pagination_status,
             @Query("per_link_") int per_link_,
             @Query("page") int page);
+
     @GET("api/get-familey-basic-category")
     Call<AllFamilyModel> getFamilies(
             @Query("pagination_status") String pagination_status,
             @Query("per_link_") int per_link_,
             @Query("page") int page,
             @Query("id") int id
-            );
+    );
+
     @GET("api/get-one-family")
     Call<SingleFamilyModel> getFamilyCategory_Products(@Query("id") int id);
+
     @GET("api/get-family-product")
     Call<AllProdutsModel> getFamilyProducts(@Query("family_id") int family_id,
                                             @Query("category_id") int category_id);
+
+    @FormUrlEncoded
+    @POST("api/create-family-order")
+    Call<SingleOrderDataModel> sendFamilyTextOrder(@Header("Authorization") String user_token,
+                                                   @Field("user_id") int user_id,
+                                                   @Field("family_id") int family_id,
+                                                   @Field("bill_cost") String bill_cost,
+                                                   @Field("client_address") String client_address,
+                                                   @Field("client_latitude") double client_latitude,
+                                                   @Field("client_longitude") double client_longitude,
+                                                   @Field("market_name") String market_name,
+                                                   @Field("market_address") String market_address,
+                                                   @Field("market_latitude") double market_latitude,
+                                                   @Field("market_longitude") double market_longitude,
+                                                   @Field("order_time_arrival") String order_time_arrival,
+                                                   @Field("coupon_id") String coupon_id,
+                                                   @Field("details") String details,
+                                                   @Field("payment_method") String payment_method
+
+
+
+    );
+
+    @Multipart
+    @POST("api/create-family-order")
+    Call<SingleOrderDataModel> sendFamilyTextOrderWithImage(@Header("Authorization") String user_token,
+                                                            @Part("user_id") RequestBody user_id,
+                                                            @Part("family_id") RequestBody family_id,
+                                                            @Part("bill_cost") RequestBody bill_cost,
+                                                            @Part("client_address") RequestBody client_address,
+                                                            @Part("client_latitude") RequestBody client_latitude,
+                                                            @Part("client_longitude") RequestBody client_longitude,
+                                                            @Part("market_name") RequestBody market_name,
+                                                            @Part("market_address") RequestBody market_address,
+                                                            @Part("market_latitude") RequestBody market_latitude,
+                                                            @Part("market_longitude") RequestBody market_longitude,
+                                                            @Part("order_time_arrival") RequestBody order_time_arrival,
+                                                            @Part("coupon_id") RequestBody coupon_id,
+                                                            @Part("details") RequestBody details,
+                                                            @Part("payment_method") RequestBody payment_method,
+                                                            @Part List<MultipartBody.Part> images
+
+
+
+    );
 }

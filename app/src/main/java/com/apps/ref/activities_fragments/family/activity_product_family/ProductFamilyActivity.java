@@ -1,4 +1,4 @@
-package com.apps.ref.activities_fragments.activity_product_family;
+package com.apps.ref.activities_fragments.family.activity_product_family;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.apps.ref.R;
-import com.apps.ref.activities_fragments.activity_family.FamilyActivity;
+import com.apps.ref.activities_fragments.family.activity_family.FamilyActivity;
 import com.apps.ref.adapters.FamilyAdapter;
 import com.apps.ref.adapters.ProductFamilyCategoryAdapter;
 import com.apps.ref.databinding.ActivityProductFamilyBinding;
@@ -25,9 +25,6 @@ import com.apps.ref.models.FamilyModel;
 import com.apps.ref.models.SingleCategoryFamilyModel;
 import com.apps.ref.remote.Api;
 import com.apps.ref.tags.Tags;
-import com.ethanhua.skeleton.RecyclerViewSkeletonScreen;
-import com.ethanhua.skeleton.Skeleton;
-import com.ethanhua.skeleton.SkeletonScreen;
 
 import java.util.ArrayList;
 import java.util.List;

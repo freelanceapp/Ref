@@ -1,4 +1,4 @@
-package com.apps.ref.activities_fragments.activity_family;
+package com.apps.ref.activities_fragments.family.activity_family;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,28 +8,26 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.apps.ref.R;
-import com.apps.ref.adapters.CategoryAdapter;
+import com.apps.ref.activities_fragments.family.activity_add_family_product.AddOrderFamilyProductActivity;
+import com.apps.ref.activities_fragments.activity_login.LoginActivity;
 import com.apps.ref.adapters.FamilyProductAdapter;
 import com.apps.ref.adapters.SubCategoryAdapter;
 import com.apps.ref.databinding.ActivityFamilyBinding;
 import com.apps.ref.language.Language;
 import com.apps.ref.models.AllProdutsModel;
 import com.apps.ref.models.FamilyModel;
-import com.apps.ref.models.ProductModel;
 import com.apps.ref.models.SingleFamilyModel;
 import com.apps.ref.models.SingleProductModel;
 import com.apps.ref.models.SingleSubCategoryModel;
 import com.apps.ref.models.UserModel;
 import com.apps.ref.preferences.Preferences;
 import com.apps.ref.remote.Api;
-import com.apps.ref.share.Common;
 import com.apps.ref.tags.Tags;
 import com.squareup.picasso.Picasso;
 
@@ -120,21 +118,22 @@ public class FamilyActivity extends AppCompatActivity {
         }
 
 
-//        binding.addToCart.setOnClickListener(view -> {
-//            if (selectedProductList.size() > 0) {
-//                if (userModel!=null){
-//                    Intent intent = new Intent(this, AddOrderProductActivity.class);
-//                intent.putExtra("data", familyModel);
-//                intent.putExtra("cost", total);
-//                intent.putExtra("products", (Serializable) selectedProductList);
-//                startActivityForResult(intent, 100);
-//            }
-//            else {
-//                   / Common.CreateDialogAlert2(FamilyActivity.this,getResources().getString(R.string.please_sign_in_or_sign_up));
-//                }
-//            }
-//
-//        });
+        binding.addToCart.setOnClickListener(view -> {
+            if (selectedProductList.size() > 0) {
+                if (userModel!=null){
+                    Intent intent = new Intent(this, AddOrderFamilyProductActivity.class);
+                intent.putExtra("data", familyModel);
+                intent.putExtra("cost", total);
+                intent.putExtra("products", (Serializable) selectedProductList);
+                startActivityForResult(intent, 100);
+            }
+            else {
+                navigateToLoginActivity(true);
+                  // Common.CreateDialogAlert2(FamilyActivity.this,getResources().getString(R.string.please_sign_in_or_sign_up));
+                }
+            }
+
+        });
 
         binding.back.setOnClickListener(view -> {
             back();
@@ -143,7 +142,19 @@ public class FamilyActivity extends AppCompatActivity {
         getFamilyCategories();
 
     }
+    public void navigateToLoginActivity(boolean hasData)
+    {
 
+        Intent intent = new Intent(this, LoginActivity.class);
+        if (hasData) {
+            intent.putExtra("from", false);
+        }
+        startActivity(intent);
+        if (!hasData) {
+            finish();
+
+        }
+    }
     private void getFamilyCategories() {
         Api.getService(Tags.base_url).getFamilyCategory_Products(familyModel.getId()).enqueue(new Callback<SingleFamilyModel>() {
             @Override

@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.apps.ref.R;
 import com.apps.ref.activities_fragments.activity_home.HomeActivity;
 import com.apps.ref.activities_fragments.activity_home.fragments.Fragment_Main;
-import com.apps.ref.activities_fragments.activity_product_family.ProductFamilyActivity;
+import com.apps.ref.activities_fragments.family.activity_product_family.ProductFamilyActivity;
 import com.apps.ref.databinding.MainCategoryDataRowBinding;
 import com.apps.ref.databinding.MainSliderRowBinding;
 import com.apps.ref.models.CategoryDataModel;

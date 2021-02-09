@@ -11,9 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.apps.ref.R;
-import com.apps.ref.activities_fragments.activity_family.FamilyActivity;
+import com.apps.ref.activities_fragments.family.activity_family.FamilyActivity;
 import com.apps.ref.databinding.ItemFamilyOrderBinding;
-import com.apps.ref.models.ProductModel;
 import com.apps.ref.models.SingleProductModel;
 
 import java.util.List;
