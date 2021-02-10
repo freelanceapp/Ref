@@ -637,7 +637,11 @@ public class ShopsActivity extends AppCompatActivity implements Listeners.BackLi
         binding.setCount(resultListFiltered.size());
 
         if (resultListFiltered.size() > 0) {
-            getPlaceDataByGooglePlaceId(0);
+            skeletonScreen.hide();
+            resultList.clear();
+            resultList.addAll(resultListFiltered);
+            adapter.notifyDataSetChanged();
+            // getPlaceDataByGooglePlaceId(0);
 
         } else {
             binding.tvNoData.setVisibility(View.VISIBLE);
@@ -664,7 +668,14 @@ public class ShopsActivity extends AppCompatActivity implements Listeners.BackLi
         }
 
 
-        getPlaceDataByGooglePlaceIdLoadMore(0, resultListFiltered);
+        isLoading = false;
+        int oldPos = resultList.size();
+        resultList.addAll(results);
+
+        int newPos = resultList.size();
+        binding.setCount(newPos);
+        adapter.notifyItemRangeChanged(oldPos, newPos);
+       // getPlaceDataByGooglePlaceIdLoadMore(0, resultListFiltered);
 
 
     }

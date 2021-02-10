@@ -460,7 +460,11 @@ public class MainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         if (resultList.size()>0){
             binding.tv.setVisibility(View.VISIBLE);
-            getPlaceDataByGooglePlaceId(0);
+            skeletonPopular.hide();
+            nearbyAdapter = new NearbyAdapter2(resultList,context,fragment_main,currency);
+            mainSliderRowBinding.recViewPopular.setAdapter(nearbyAdapter);
+
+            //getPlaceDataByGooglePlaceId(0);
 
         }else {
             binding.tv.setVisibility(View.GONE);
@@ -489,8 +493,17 @@ public class MainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
 
 
+        isLoading = false;
+        if (resultList.get(resultList.size()-1)==null){
+            resultList.remove(resultList.size()-1);
+            nearbyAdapter.notifyItemRemoved(resultList.size()-1);
+        }
+        int oldPos = resultList.size()-1;
 
-        getPlaceDataByGooglePlaceIdLoadMore(0,resultListFiltered);
+        resultList.addAll(results);
+        int newPos = resultList.size();
+        nearbyAdapter.notifyItemRangeChanged(oldPos,newPos);
+        //getPlaceDataByGooglePlaceIdLoadMore(0,resultListFiltered);
 
 
     }

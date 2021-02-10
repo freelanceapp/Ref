@@ -315,7 +315,12 @@ public class ShopsQueryActivity extends AppCompatActivity {
 
 
         if (resultListFiltered.size()>0){
-            getPlaceDataByGooglePlaceId(0);
+
+            skeletonScreen.hide();
+            resultList.clear();
+            resultList.addAll(resultListFiltered);
+            adapter.notifyDataSetChanged();
+            //getPlaceDataByGooglePlaceId(0);
 
         }else {
             binding.tvNoData.setVisibility(View.VISIBLE);
@@ -344,7 +349,19 @@ public class ShopsQueryActivity extends AppCompatActivity {
         }
 
 
-       getPlaceDataByGooglePlaceIdLoadMore(0,resultListFiltered);
+        isLoading = false;
+        if (resultList.get(resultList.size()-1)==null){
+            resultList.remove(resultList.size()-1);
+            adapter.notifyItemRemoved(resultList.size()-1);
+        }
+        int oldPos = resultList.size();
+        resultList.addAll(results);
+
+        int newPos = resultList.size();
+        adapter.notifyItemRangeChanged(oldPos,newPos);
+
+
+       //getPlaceDataByGooglePlaceIdLoadMore(0,resultListFiltered);
 
 
         //sortData();
