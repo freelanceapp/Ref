@@ -76,7 +76,7 @@ public class AddOrderFamilyProductActivity extends AppCompatActivity {
     private AddOrderImagesAdapter addOrderImagesAdapter;
     private UserModel userModel;
     private Preferences preferences;
-    private String vat="0";
+    private String vat = "0";
     private CartProductAdapter adapter;
     private double total_cost = 0.0;
     private FamilyModel familyModel;
@@ -93,7 +93,6 @@ public class AddOrderFamilyProductActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,13 +104,13 @@ public class AddOrderFamilyProductActivity extends AppCompatActivity {
     private void getDataFromIntent() {
         Intent intent = getIntent();
         familyModel = (FamilyModel) intent.getSerializableExtra("data");
-        total_cost = intent.getDoubleExtra("cost",0.0);
+        total_cost = intent.getDoubleExtra("cost", 0.0);
         productModelList = (List<SingleProductModel>) intent.getSerializableExtra("products");
 
     }
 
     private void initView() {
-        if (productModelList==null){
+        if (productModelList == null) {
             productModelList = new ArrayList<>();
         }
         addOrderTextModel = new AddOrderFamilyTextModel();
@@ -119,27 +118,29 @@ public class AddOrderFamilyProductActivity extends AppCompatActivity {
         userModel = preferences.getUserData(this);
         imagesList = new ArrayList<>();
         Paper.init(this);
-        lang = Paper.book().read("lang","ar");
+        lang = Paper.book().read("lang", "ar");
         binding.setLang(lang);
         binding.setPriceBeforeVat("0");
-        binding.setTotalCost(String.format(Locale.ENGLISH,"%.2f",total_cost));
+        binding.setTotalCost(String.format(Locale.ENGLISH, "%.2f", total_cost));
         binding.setModel(familyModel);
         binding.setVat(vat);
         currency = getString(R.string.sar);
-        if (userModel!=null){
+        if (userModel != null) {
             currency = userModel.getUser().getCountry().getWord().getCurrency();
         }
         binding.setCurrency(currency);
-        binding.recViewImages.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
-        addOrderImagesAdapter = new AddOrderImagesAdapter(imagesList,this);
+        binding.recViewImages.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        addOrderImagesAdapter = new AddOrderImagesAdapter(imagesList, this);
         binding.recViewImages.setAdapter(addOrderImagesAdapter);
 
         binding.imageCamera.setOnClickListener(v -> createDialogAlert());
         binding.tvAddCoupon.setOnClickListener(v -> {
             Intent intent = new Intent(this, AddCouponActivity.class);
-            startActivityForResult(intent,100);
+            startActivityForResult(intent, 100);
         });
-        binding.close.setOnClickListener(v -> {super.onBackPressed();});
+        binding.close.setOnClickListener(v -> {
+            super.onBackPressed();
+        });
         binding.tvAddComment.setOnClickListener(v -> {
             binding.tvAddComment.setVisibility(View.GONE);
             binding.llNotes.setVisibility(View.VISIBLE);
@@ -147,11 +148,11 @@ public class AddOrderFamilyProductActivity extends AppCompatActivity {
 
         binding.btnNext.setOnClickListener(v -> {
             Intent intent = new Intent(this, MapDeliveryLocationActivity.class);
-            intent.putExtra("data",familyModel);
-            startActivityForResult(intent,200);
+            intent.putExtra("data", familyModel);
+            startActivityForResult(intent, 200);
         });
         binding.recViewProducts.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new CartProductAdapter(productModelList,this);
+        adapter = new CartProductAdapter(productModelList, this);
         binding.recViewProducts.setAdapter(adapter);
         addOrderTextModel.setUser_id(userModel.getUser().getId());
         addOrderTextModel.setFamily_id(familyModel.getId());
@@ -196,7 +197,8 @@ public class AddOrderFamilyProductActivity extends AppCompatActivity {
 
 
     }
-//    private void getDelevryCost(int distance2)
+
+    //    private void getDelevryCost(int distance2)
 //    {
 //        ProgressDialog progressDialog= Common.createProgressDialog(this,getString(R.string.wait));
 //        progressDialog.setCancelable(false);
@@ -249,8 +251,7 @@ public class AddOrderFamilyProductActivity extends AppCompatActivity {
 //                    }
 //                });
 //    }
-    private void getVAT()
-    {
+    private void getVAT() {
         calculateTotalPrice();
        /* ProgressDialog dialog = Common.createProgressDialog(this,getString(R.string.wait));
         dialog.setCancelable(false);
@@ -302,44 +303,41 @@ public class AddOrderFamilyProductActivity extends AppCompatActivity {
         });*/
 
     }
-    private void sendOrderTextWithoutImage()
-    {
 
-        ProgressDialog dialog = Common.createProgressDialog(this,getString(R.string.wait));
+    private void sendOrderTextWithoutImage() {
+
+        ProgressDialog dialog = Common.createProgressDialog(this, getString(R.string.wait));
         dialog.setCancelable(false);
         dialog.show();
 
         String notes = binding.edtComment.getText().toString();
-        String order_text =convertOrderToText();
-        if (!notes.isEmpty()){
-         order_text = order_text+"\n"+"ملاحظات:-"+"\n"+notes;
+        String order_text = convertOrderToText();
+        if (!notes.isEmpty()) {
+            order_text = order_text + "\n" + "ملاحظات:-" + "\n" + notes;
         }
         addOrderTextModel.setOrder_description(order_text);
         addOrderTextModel.setOrder_notes(notes);
+       // Log.e("ddddd", userModel.getUser().getToken(), userModel.getUser().getId(), addOrderTextModel.getFamily_id(), String.valueOf(addOrderTextModel.getBill_cost()), addOrderTextModel.getTo_address(), addOrderTextModel.getTo_latitude(), addOrderTextModel.getTo_longitude(), addOrderTextModel.getFrom_name(), addOrderTextModel.getFrom_address(), addOrderTextModel.getFrom_latitude(), addOrderTextModel.getFrom_longitude(), addOrderTextModel.getHour_arrival_time(), addOrderTextModel.getCoupon_id(), addOrderTextModel.getOrder_notes(), addOrderTextModel.getOrder_description(), addOrderTextModel.getPayment_method())
         Api.getService(Tags.base_url)
-                .sendFamilyTextOrder("Bearer "+userModel.getUser().getToken(),userModel.getUser().getId(),addOrderTextModel.getFamily_id(), String.valueOf(addOrderTextModel.getBill_cost()),addOrderTextModel.getTo_address(),addOrderTextModel.getTo_latitude(),addOrderTextModel.getTo_longitude(),addOrderTextModel.getFrom_name(),addOrderTextModel.getFrom_address(),addOrderTextModel.getFrom_latitude(),addOrderTextModel.getFrom_longitude(),addOrderTextModel.getEnd_shipping_time(),addOrderTextModel.getCoupon_id(),addOrderTextModel.getOrder_notes(),addOrderTextModel.getPayment_method())
+                .sendFamilyTextOrder( userModel.getUser().getToken(), userModel.getUser().getId(), addOrderTextModel.getFamily_id(), String.valueOf(addOrderTextModel.getBill_cost()), addOrderTextModel.getTo_address(), addOrderTextModel.getTo_latitude(), addOrderTextModel.getTo_longitude(), addOrderTextModel.getFrom_name(), addOrderTextModel.getFrom_address(), addOrderTextModel.getFrom_latitude(), addOrderTextModel.getFrom_longitude(), addOrderTextModel.getHour_arrival_time(), addOrderTextModel.getCoupon_id(), addOrderTextModel.getOrder_notes(), addOrderTextModel.getOrder_description(), addOrderTextModel.getPayment_method())
                 .enqueue(new Callback<SingleOrderDataModel>() {
                     @Override
                     public void onResponse(Call<SingleOrderDataModel> call, Response<SingleOrderDataModel> response) {
                         dialog.dismiss();
-                        if (response.isSuccessful()&&response.body()!=null)
-                        {
+                        if (response.isSuccessful() && response.body() != null) {
                             Intent intent = getIntent();
-                            intent.putExtra("order_id",response.body().getOrder().getId());
-                            setResult(RESULT_OK,intent);
+                            intent.putExtra("order_id", response.body().getOrder().getId());
+                            setResult(RESULT_OK, intent);
                             finish();
-                        }else
-                        {
-                            if (response.code()==500)
-                            {
+                        } else {
+                            if (response.code() == 500) {
                                 Toast.makeText(AddOrderFamilyProductActivity.this, "Server Error", Toast.LENGTH_SHORT).show();
-                            } else
-                            {
-                                Toast.makeText(AddOrderFamilyProductActivity.this,getString(R.string.failed), Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(AddOrderFamilyProductActivity.this, getString(R.string.failed), Toast.LENGTH_SHORT).show();
                             }
 
                             try {
-                                Log.e("error",response.errorBody().string());
+                                Log.e("error", response.errorBody().string());
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -359,28 +357,27 @@ public class AddOrderFamilyProductActivity extends AppCompatActivity {
                                     Toast.makeText(AddOrderFamilyProductActivity.this, getString(R.string.failed), Toast.LENGTH_SHORT).show();
                                 }
                             }
-                        }catch (Exception e)
-                        {
-                            Log.e("Error",e.getMessage()+"__");
+                        } catch (Exception e) {
+                            Log.e("Error", e.getMessage() + "__");
                         }
                     }
                 });
     }
-    private void sendOrderTextWithImage()
-    {
-        ProgressDialog dialog = Common.createProgressDialog(this,getString(R.string.wait));
+
+    private void sendOrderTextWithImage() {
+        ProgressDialog dialog = Common.createProgressDialog(this, getString(R.string.wait));
         dialog.setCancelable(false);
         dialog.show();
         String notes = binding.edtComment.getText().toString();
-        String order_text =convertOrderToText();
-        if (!notes.isEmpty()){
-            order_text = order_text+"\n"+"ملاحظات:-"+"\n"+notes;
+        String order_text = convertOrderToText();
+        if (!notes.isEmpty()) {
+            order_text = order_text + "\n" + "ملاحظات:-" + "\n" + notes;
         }
         addOrderTextModel.setOrder_description(order_text);
         addOrderTextModel.setOrder_notes(notes);
 
 
-        Log.e("order_type",addOrderTextModel.getOrder_type()+"_");
+        Log.e("order_type", addOrderTextModel.getOrder_type() + "_");
         RequestBody user_id_part = Common.getRequestBodyText(String.valueOf(addOrderTextModel.getUser_id()));
         RequestBody order_type_part = Common.getRequestBodyText(addOrderTextModel.getOrder_type());
         RequestBody family_id_part = Common.getRequestBodyText(String.valueOf(addOrderTextModel.getFamily_id()));
@@ -399,34 +396,30 @@ public class AddOrderFamilyProductActivity extends AppCompatActivity {
         RequestBody notes_part = Common.getRequestBodyText(addOrderTextModel.getOrder_notes());
         RequestBody payment_part = Common.getRequestBodyText(addOrderTextModel.getPayment_method());
         RequestBody hours_part = Common.getRequestBodyText(addOrderTextModel.getHour_arrival_time());
-        RequestBody delevery_cost_part = Common.getRequestBodyText(cost+"");
+        RequestBody delevery_cost_part = Common.getRequestBodyText(cost + "");
 
 
         Api.getService(Tags.base_url)
-                .sendFamilyTextOrderWithImage("Bearer "+userModel.getUser().getToken(),user_id_part,family_id_part,bill_cost_part,to_address_part,to_lat_part,to_lng_part,from_name_part,from_address_part,from_lat_part,from_lng_part,arrival_time_part,coupon_id_part,notes_part,payment_part,getMultiPartImages())
+                .sendFamilyTextOrderWithImage( userModel.getUser().getToken(), user_id_part, family_id_part, bill_cost_part, to_address_part, to_lat_part, to_lng_part, from_name_part, from_address_part, from_lat_part, from_lng_part, hours_part, coupon_id_part, notes_part, details_part, payment_part, getMultiPartImages())
                 .enqueue(new Callback<SingleOrderDataModel>() {
                     @Override
                     public void onResponse(Call<SingleOrderDataModel> call, Response<SingleOrderDataModel> response) {
                         dialog.dismiss();
-                        if (response.isSuccessful()&&response.body()!=null)
-                        {
+                        if (response.isSuccessful() && response.body() != null) {
 
                             Intent intent = getIntent();
-                            intent.putExtra("order_id",response.body().getOrder().getId());
-                            setResult(RESULT_OK,intent);
+                            intent.putExtra("order_id", response.body().getOrder().getId());
+                            setResult(RESULT_OK, intent);
                             finish();
-                        }else
-                        {
-                            if (response.code()==500)
-                            {
+                        } else {
+                            if (response.code() == 500) {
                                 Toast.makeText(AddOrderFamilyProductActivity.this, "Server Error", Toast.LENGTH_SHORT).show();
-                            } else
-                            {
-                                Toast.makeText(AddOrderFamilyProductActivity.this,getString(R.string.failed), Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(AddOrderFamilyProductActivity.this, getString(R.string.failed), Toast.LENGTH_SHORT).show();
                             }
 
                             try {
-                                Log.e("error",response.errorBody().string());
+                                Log.e("error", response.errorBody().string());
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -445,48 +438,46 @@ public class AddOrderFamilyProductActivity extends AppCompatActivity {
                                     Toast.makeText(AddOrderFamilyProductActivity.this, getString(R.string.failed), Toast.LENGTH_SHORT).show();
                                 }
                             }
-                        }catch (Exception e)
-                        {
-                            Log.e("Error",e.getMessage()+"__");
+                        } catch (Exception e) {
+                            Log.e("Error", e.getMessage() + "__");
                         }
                     }
                 });
     }
-    private List<MultipartBody.Part> getMultiPartImages()
-    {
+
+    private List<MultipartBody.Part> getMultiPartImages() {
         List<MultipartBody.Part> parts = new ArrayList<>();
-        for (Uri uri :imagesList){
-            if (uri!=null){
-                MultipartBody.Part part = Common.getMultiPartImage(this,uri,"images[]");
+        for (Uri uri : imagesList) {
+            if (uri != null) {
+                MultipartBody.Part part = Common.getMultiPartImage(this, uri, "images[]");
                 parts.add(part);
             }
 
         }
         return parts;
     }
-    private String convertOrderToText()
-    {
+
+    private String convertOrderToText() {
         String order = "";
-        for (int index = 0;index<productModelList.size();index++){
+        for (int index = 0; index < productModelList.size(); index++) {
             SingleProductModel model = productModelList.get(index);
-            order = order+model.getTitle()+"("+model.getCount()+")"+"\n";
+            order = order + model.getTitle() + "(" + model.getCount() + ")" + "\n";
 
         }
         return order;
     }
 
-    private void calculateTotalPrice()
-    {
+    private void calculateTotalPrice() {
         //double tax = addOrderProductsModel.getTotal_cost()*(Double.parseDouble(vat)/100);
 
         double tax = 0;
-        binding.setVat(String.format(Locale.ENGLISH,"%.2f",tax));
-        double priceBeforeVat = total_cost-tax;
-        binding.setPriceBeforeVat(String.format(Locale.ENGLISH,"%.2f",priceBeforeVat));
+        binding.setVat(String.format(Locale.ENGLISH, "%.2f", tax));
+        double priceBeforeVat = total_cost - tax;
+        binding.setPriceBeforeVat(String.format(Locale.ENGLISH, "%.2f", priceBeforeVat));
 
     }
-    public void createDialogAlert()
-    {
+
+    public void createDialogAlert() {
         dialog = new AlertDialog.Builder(this)
                 .create();
 
@@ -499,16 +490,16 @@ public class AddOrderFamilyProductActivity extends AppCompatActivity {
         dialog.setView(binding.getRoot());
         dialog.show();
     }
-    public void checkReadPermission()
-    {
+
+    public void checkReadPermission() {
         if (ActivityCompat.checkSelfPermission(this, READ_PERM) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{READ_PERM}, READ_REQ);
         } else {
             SelectImage(READ_REQ);
         }
     }
-    public void checkCameraPermission()
-    {
+
+    public void checkCameraPermission() {
 
 
         if (ContextCompat.checkSelfPermission(this, write_permission) == PackageManager.PERMISSION_GRANTED
@@ -519,8 +510,8 @@ public class AddOrderFamilyProductActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[]{camera_permission, write_permission}, CAMERA_REQ);
         }
     }
-    private void SelectImage(int req)
-    {
+
+    private void SelectImage(int req) {
 
         Intent intent = new Intent();
 
@@ -570,8 +561,7 @@ public class AddOrderFamilyProductActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == READ_REQ && resultCode == Activity.RESULT_OK && data != null) {
 
@@ -579,8 +569,7 @@ public class AddOrderFamilyProductActivity extends AppCompatActivity {
             cropImage(uri);
 
 
-        }
-        else if (requestCode == CAMERA_REQ && resultCode == Activity.RESULT_OK && data != null) {
+        } else if (requestCode == CAMERA_REQ && resultCode == Activity.RESULT_OK && data != null) {
 
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
             Uri uri = getUriFromBitmap(bitmap);
@@ -590,100 +579,98 @@ public class AddOrderFamilyProductActivity extends AppCompatActivity {
             }
 
 
-        }
-        else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+        } else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
 
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {
                 Uri uri = result.getUri();
 
-                if (imagesList.size()>0){
-                    imagesList.add(imagesList.size()-1,uri);
-                    addOrderImagesAdapter.notifyItemInserted(imagesList.size()-1);
+                if (imagesList.size() > 0) {
+                    imagesList.add(imagesList.size() - 1, uri);
+                    addOrderImagesAdapter.notifyItemInserted(imagesList.size() - 1);
 
-                }else {
+                } else {
                     imagesList.add(uri);
                     imagesList.add(null);
-                    addOrderImagesAdapter.notifyItemRangeInserted(0,imagesList.size());
+                    addOrderImagesAdapter.notifyItemRangeInserted(0, imagesList.size());
                 }
 
 
                 dialog.dismiss();
 
-                binding.recViewImages.postDelayed(()->{
-                    binding.recViewImages.smoothScrollToPosition(imagesList.size()-1);
-                },100);
+                binding.recViewImages.postDelayed(() -> {
+                    binding.recViewImages.smoothScrollToPosition(imagesList.size() - 1);
+                }, 100);
 
 
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
             }
-        }
-        else if (requestCode == 100 && resultCode == Activity.RESULT_OK && data != null){
+        } else if (requestCode == 100 && resultCode == Activity.RESULT_OK && data != null) {
             //coupon
 
-        }
-        else if (requestCode == 200 && resultCode == Activity.RESULT_OK && data != null){
+        } else if (requestCode == 200 && resultCode == Activity.RESULT_OK && data != null) {
             FavoriteLocationModel favoriteLocationModel = (FavoriteLocationModel) data.getSerializableExtra("data");
             addOrderTextModel.setTo_address(favoriteLocationModel.getAddress());
             addOrderTextModel.setTo_latitude(favoriteLocationModel.getLat());
             addOrderTextModel.setTo_longitude(favoriteLocationModel.getLng());
             distance = String.format(Locale.ENGLISH, "%s", String.format(Locale.ENGLISH, "%.0f", (SphericalUtil.computeDistanceBetween(new LatLng(addOrderTextModel.getTo_latitude(), addOrderTextModel.getTo_longitude()), new LatLng(addOrderTextModel.getFrom_latitude(), addOrderTextModel.getFrom_longitude())) / 1000)));
 
-            int distance2=Integer.parseInt(distance);
+            int distance2 = Integer.parseInt(distance);
 
-            Log.e("ldldl",distance+"----"+distance2);
-           // getDelevryCost(distance2);
+            Log.e("ldldl", distance + "----" + distance2);
+            // getDelevryCost(distance2);
 
-            int time = data.getIntExtra("time",1);
+            int time = data.getIntExtra("time", 1);
             Calendar calendar = Calendar.getInstance();
-            switch (time){
+            switch (time) {
                 case 1:
                     addOrderTextModel.setHour_arrival_time("1");
-                    calendar.add(Calendar.HOUR_OF_DAY,1);
+                    calendar.add(Calendar.HOUR_OF_DAY, 1);
                     break;
                 case 2:
                     addOrderTextModel.setHour_arrival_time("2");
-                    calendar.add(Calendar.HOUR_OF_DAY,2);
+                    calendar.add(Calendar.HOUR_OF_DAY, 2);
                     break;
                 case 3:
                     addOrderTextModel.setHour_arrival_time("3");
-                    calendar.add(Calendar.HOUR_OF_DAY,3);
+                    calendar.add(Calendar.HOUR_OF_DAY, 3);
 
                     break;
                 case 4:
                     addOrderTextModel.setHour_arrival_time("4");
 
-                    calendar.add(Calendar.DAY_OF_MONTH,1);
+                    calendar.add(Calendar.DAY_OF_MONTH, 1);
 
                     break;
                 case 5:
                     addOrderTextModel.setHour_arrival_time("5");
-                    calendar.add(Calendar.DAY_OF_MONTH,2);
+                    calendar.add(Calendar.DAY_OF_MONTH, 2);
 
                     break;
                 case 6:
                     addOrderTextModel.setHour_arrival_time("6");
 
-                    calendar.add(Calendar.DAY_OF_MONTH,3);
+                    calendar.add(Calendar.DAY_OF_MONTH, 3);
 
                     break;
             }
 
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss",Locale.ENGLISH);
-            String timeArrival =dateFormat.format(new Date(calendar.getTimeInMillis()));
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
+            String timeArrival = dateFormat.format(new Date(calendar.getTimeInMillis()));
             addOrderTextModel.setEnd_shipping_time(timeArrival);
 
-            if (imagesList.size()>0){
+            if (imagesList.size() > 0) {
                 sendOrderTextWithImage();
-            }else {
+            } else {
                 sendOrderTextWithoutImage();
             }
 
         }
 
     }
-    private void CreateDialogAlert3(Context context,String msg) {
+
+    private void CreateDialogAlert3(Context context, String msg) {
         final AlertDialog dialog = new AlertDialog.Builder(context)
                 .create();
 
@@ -691,12 +678,12 @@ public class AddOrderFamilyProductActivity extends AppCompatActivity {
 
         binding.tvMsg.setText(msg);
         binding.btnCancel.setText(getString(R.string.send));
-        binding.btnCancel.setOnClickListener(v ->{
-            if (imagesList.size()>0){
-                sendOrderTextWithImage();
-            }else {
-                sendOrderTextWithoutImage();
-            }
+        binding.btnCancel.setOnClickListener(v -> {
+                    if (imagesList.size() > 0) {
+                        sendOrderTextWithImage();
+                    } else {
+                        sendOrderTextWithoutImage();
+                    }
                     dialog.dismiss();
                 }
 
@@ -707,42 +694,41 @@ public class AddOrderFamilyProductActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    private void cropImage(Uri uri)
-    {
+    private void cropImage(Uri uri) {
 
-        CropImage.activity(uri).setAspectRatio(1,1).setGuidelines(CropImageView.Guidelines.ON).start(this);
+        CropImage.activity(uri).setAspectRatio(1, 1).setGuidelines(CropImageView.Guidelines.ON).start(this);
 
     }
-    private Uri getUriFromBitmap(Bitmap bitmap)
-    {
+
+    private Uri getUriFromBitmap(Bitmap bitmap) {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
         return Uri.parse(MediaStore.Images.Media.insertImage(this.getContentResolver(), bitmap, "", ""));
     }
-    public void delete(int adapterPosition)
-    {
+
+    public void delete(int adapterPosition) {
         imagesList.remove(adapterPosition);
-        if (imagesList.size()==1){
+        if (imagesList.size() == 1) {
             imagesList.clear();
             addOrderImagesAdapter.notifyDataSetChanged();
-        }else {
+        } else {
             addOrderImagesAdapter.notifyItemRemoved(adapterPosition);
         }
     }
-    public void updateItemCount(SingleProductModel productModel, int pos)
-    {
-        productModelList.set(pos,productModel);
+
+    public void updateItemCount(SingleProductModel productModel, int pos) {
+        productModelList.set(pos, productModel);
         total_cost = getTotalOrderCost(productModelList);
         addOrderTextModel.setBill_cost(total_cost);
 
-        binding.setTotalCost(String.format(Locale.ENGLISH,"%.2f",total_cost));
+        binding.setTotalCost(String.format(Locale.ENGLISH, "%.2f", total_cost));
         calculateTotalPrice();
     }
-    private double getTotalOrderCost(List<SingleProductModel> productModelList)
-    {
-        double total=0.0;
-        for (SingleProductModel model:productModelList){
-            total +=model.getPrice()*model.getCount();
+
+    private double getTotalOrderCost(List<SingleProductModel> productModelList) {
+        double total = 0.0;
+        for (SingleProductModel model : productModelList) {
+            total += model.getPrice() * model.getCount();
         }
 
         return total;

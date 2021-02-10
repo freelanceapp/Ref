@@ -362,8 +362,12 @@
     <string name="professional">إحترافي</string>
     <string name="responsive">متجاوب</string>
     <string name="productive_families">أسر منتجة</string>
-    <string name="no_data_to_show">No Data To Show</string>
-    <string name="no_image">No Image</string>
-    <string name="total">Total</string>
+    <string name="no_data_to_show">لا يوجد بيانات لعرضها</string>
+    <string name="no_image">لا يوجد صور</string>
+    <string name="total">المجموع</string>
+    <string name="electronic">الكترونى</string>
+    <string name="subscriptions">Subscriptions</string>
+    <string name="buy">Buy</string>
+    <string name="suc">Sucess</string>
 
 </resources>

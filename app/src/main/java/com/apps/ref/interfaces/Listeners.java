@@ -24,6 +24,7 @@ public interface Listeners {
     }
 
     interface ProfileAction{
+        void onSubscriptions();
         void onReviews();
         void onFeedback();
         void onCoupons();

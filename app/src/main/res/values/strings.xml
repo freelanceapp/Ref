@@ -364,6 +364,10 @@
     <string name="no_data_to_show">No Data To Show</string>
     <string name="no_image">No Image</string>
     <string name="total">Total</string>
+    <string name="electronic">Electronic</string>
+    <string name="subscriptions">Subscriptions</string>
+    <string name="buy">Buy</string>
+    <string name="suc">Sucess</string>
 
 
 </resources>

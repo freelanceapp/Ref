@@ -229,6 +229,7 @@
                         android:layout_marginTop="10dp"
                         >
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/card"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:cardCornerRadius="5dp"
@@ -238,11 +239,11 @@
 
                             >
                             <FrameLayout
+                                android:id="@+id/frcard"
                                 android:layout_width="wrap_content"
                                 android:layout_height="35dp"
                                 android:paddingStart="10dp"
                                 android:paddingEnd="10dp"
-                                android:background="@drawable/small_stroke_primary2"
                                 >
                                 <LinearLayout
                                     android:layout_width="wrap_content"
@@ -252,11 +253,12 @@
 
                                     >
                                     <ImageView
+                                        android:id="@+id/iconcard"
                                         android:layout_width="20dp"
                                         android:layout_height="20dp"
                                         android:src="@drawable/ic_check"
-                                        app:tint="@color/colorPrimary"
-
+                                        android:tint="@color/colorPrimary"
+                                        android:visibility="gone"
                                         />
                                     <TextView
                                         android:layout_width="wrap_content"
@@ -265,7 +267,7 @@
                                         android:layout_marginEnd="10dp"
                                         android:textSize="15sp"
                                         android:textColor="@color/gray11"
-                                        android:text="@string/cash"
+                                        android:text="@string/electronic"
                                         />
                                     <LinearLayout
                                         android:layout_width="wrap_content"
@@ -277,7 +279,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:textSize="5sp"
-                                            android:text="Cash"
+                                            android:text="card"
                                             tools:ignore="HardcodedText,SmallSp"
                                             android:layout_gravity="center_horizontal"
 
@@ -286,7 +288,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:textSize="5sp"
-                                            android:text="كــاش"
+                                            android:text="كارد"
                                             tools:ignore="HardcodedText,SmallSp"
                                             android:layout_gravity="center_horizontal"
                                             />
@@ -294,7 +296,7 @@
                                     <ImageView
                                         android:layout_width="20dp"
                                         android:layout_height="20dp"
-                                        android:src="@drawable/cash"
+                                        android:src="@drawable/credit"
                                         android:padding="3dp"
                                         />
                                 </LinearLayout>

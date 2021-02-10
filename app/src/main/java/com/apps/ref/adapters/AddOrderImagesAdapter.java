@@ -15,6 +15,7 @@ import com.apps.ref.R;
 import com.apps.ref.activities_fragments.activity_add_order_products.AddOrderProductActivity;
 import com.apps.ref.activities_fragments.activity_add_order_text.AddOrderTextActivity;
 import com.apps.ref.activities_fragments.activity_resend_order.ResendOrderTextActivity;
+import com.apps.ref.activities_fragments.family.activity_add_family_product.AddOrderFamilyProductActivity;
 import com.apps.ref.databinding.AddOrderImagesMoreRowBinding;
 import com.apps.ref.databinding.AddOrderImagesRowBinding;
 import com.squareup.picasso.Picasso;
@@ -73,6 +74,11 @@ public class AddOrderImagesAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                     resendOrderTextActivity.delete(myHolder.getAdapterPosition());
 
                 }
+                else if (activity instanceof AddOrderFamilyProductActivity){
+                    AddOrderFamilyProductActivity resendOrderTextActivity = (AddOrderFamilyProductActivity) activity;
+                    resendOrderTextActivity.delete(myHolder.getAdapterPosition());
+
+                }
             });
 
         }else if (holder instanceof AddOrderMoreMoreHolder){
@@ -92,6 +98,12 @@ public class AddOrderImagesAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                     resendOrderTextActivity.createDialogAlert();
 
                 }
+                else if (activity instanceof AddOrderFamilyProductActivity){
+                    AddOrderFamilyProductActivity resendOrderTextActivity = (AddOrderFamilyProductActivity) activity;
+                    resendOrderTextActivity.createDialogAlert();
+
+                }
+
 
             });
         }

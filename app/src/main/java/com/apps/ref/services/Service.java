@@ -16,6 +16,7 @@ import com.apps.ref.models.NotificationDataModel;
 import com.apps.ref.models.OfferSettingModel;
 import com.apps.ref.models.OffersDataModel;
 import com.apps.ref.models.OrdersDataModel;
+import com.apps.ref.models.PackageResponse;
 import com.apps.ref.models.PlaceDetailsModel;
 import com.apps.ref.models.PlaceDirectionModel;
 import com.apps.ref.models.PlaceGeocodeData;
@@ -27,6 +28,7 @@ import com.apps.ref.models.SingleFamilyModel;
 import com.apps.ref.models.SingleMessageDataModel;
 import com.apps.ref.models.SingleOrderDataModel;
 import com.apps.ref.models.SliderModel;
+import com.apps.ref.models.SubscriptionDataModel;
 import com.apps.ref.models.UnReadCountModel;
 import com.apps.ref.models.UserModel;
 
@@ -612,6 +614,7 @@ public interface Service {
                                                    @Field("order_time_arrival") String order_time_arrival,
                                                    @Field("coupon_id") String coupon_id,
                                                    @Field("details") String details,
+                                                   @Field("notes") String notes,
                                                    @Field("payment_method") String payment_method
 
 
@@ -634,9 +637,22 @@ public interface Service {
                                                             @Part("order_time_arrival") RequestBody order_time_arrival,
                                                             @Part("coupon_id") RequestBody coupon_id,
                                                             @Part("details") RequestBody details,
+                                                            @Part("notes") RequestBody notes,
                                                             @Part("payment_method") RequestBody payment_method,
                                                             @Part List<MultipartBody.Part> images
 
+
+
+    );
+    @GET("api/Get-Packages")
+    Call<SubscriptionDataModel> getSubscription();
+
+
+    @FormUrlEncoded
+    @POST("api/pay")
+    Call<PackageResponse> buyPackage(@Field("package_id") int package_id,
+                                     @Field("user_id") int user_id,
+                                     @Field("price") String price
 
 
     );

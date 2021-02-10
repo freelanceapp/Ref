@@ -21,6 +21,7 @@ import com.apps.ref.R;
 import com.apps.ref.activities_fragments.activity_add_coupon.AddCouponActivity;
 import com.apps.ref.activities_fragments.activity_home.HomeActivity;
 import com.apps.ref.activities_fragments.activity_setting.SettingsActivity;
+import com.apps.ref.activities_fragments.activity_subscription.SubscriptionActivity;
 import com.apps.ref.activities_fragments.activity_user_feedback.UserFeedbackActivity;
 import com.apps.ref.databinding.FragmentProfileBinding;
 import com.apps.ref.interfaces.Listeners;
@@ -157,6 +158,14 @@ public class Fragment_Profile extends Fragment implements Listeners.ProfileActio
                         }
                     }
                 });
+    }
+
+    @Override
+    public void onSubscriptions() {
+        Intent intent = new Intent(activity, SubscriptionActivity.class);
+        intent.putExtra("data", preferences.getUserData(activity));
+        startActivity(intent);
+        getActivity().finish();
     }
 
     @Override

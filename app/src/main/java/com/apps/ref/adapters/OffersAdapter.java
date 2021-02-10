@@ -59,7 +59,8 @@ public class OffersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             MyHolder myHolder = (MyHolder) holder;
             OffersModel offersModel = list.get(position);
             myHolder.binding.setModel(offersModel);
-            double cost = Double.parseDouble(offersModel.getOffer_value())+Double.parseDouble(offersModel.getTax_value());
+            double cost = Double.parseDouble(offersModel.getOffer_value());
+                   // +Double.parseDouble(offersModel.getTax_value());
             myHolder.binding.tvDeliveryCost.setText(String.format(Locale.ENGLISH,"%s %s",String.format(Locale.ENGLISH,"%.2f",cost),currency));
             if (Double.parseDouble(offersModel.getOffer_value())>Double.parseDouble(offersModel.getMin_offer())){
                 myHolder.binding.btnCancel.setText(R.string.less_offer);
