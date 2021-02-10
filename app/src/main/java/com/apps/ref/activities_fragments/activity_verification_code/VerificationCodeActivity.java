@@ -81,11 +81,12 @@ public class VerificationCodeActivity extends AppCompatActivity {
 
         binding.btnConfirm.setOnClickListener(v -> {
             String sms = binding.edtCode.getText().toString().trim();
-            if (!sms.isEmpty()) {
-                checkValidCode(sms);
-            } else {
-                binding.edtCode.setError(getString(R.string.inv_code));
-            }
+            navigateToActivityConfirmSuccess();
+//            if (!sms.isEmpty()) {
+//                checkValidCode(sms);
+//            } else {
+//                binding.edtCode.setError(getString(R.string.inv_code));
+//            }
         });
         sendSmsCode();
     }

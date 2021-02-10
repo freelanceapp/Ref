@@ -366,8 +366,8 @@
     <string name="no_image">لا يوجد صور</string>
     <string name="total">المجموع</string>
     <string name="electronic">الكترونى</string>
-    <string name="subscriptions">Subscriptions</string>
-    <string name="buy">Buy</string>
-    <string name="suc">Sucess</string>
+    <string name="subscriptions">الاشتراكات</string>
+    <string name="buy">اشترى</string>
+    <string name="suc">تم بنجاح</string>
 
 </resources>

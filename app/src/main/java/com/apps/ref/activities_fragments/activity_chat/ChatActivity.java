@@ -889,7 +889,8 @@ public class ChatActivity extends AppCompatActivity {
             binding.llBill.setVisibility(View.GONE);
             double offer_value = 0.0;
             if (orderModel.getOrder_offer() != null) {
-                offer_value = Double.parseDouble(orderModel.getOrder_offer().getOffer_value()) + Double.parseDouble(orderModel.getOrder_offer().getTax_value());
+                offer_value = Double.parseDouble(orderModel.getOrder_offer().getOffer_value());
+                      //  + Double.parseDouble(orderModel.getOrder_offer().getTax_value());
 
             }
             binding.tvOfferValue.setText(String.format(Locale.ENGLISH, "%.2f %s", offer_value, currency));
